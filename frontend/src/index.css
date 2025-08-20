@@ -1,17 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #f8f8f8;
 }
 
-/* Mobile container styling */
 .mobile-container {
     max-width: 375px;
     margin: 0 auto;
@@ -20,7 +22,6 @@ body {
     position: relative;
 }
 
-/* For centering on larger screens */
 @media (min-width: 376px) {
     body {
         background-color: #f3f4f6;
@@ -31,10 +32,30 @@ body {
     }
 
     .mobile-container {
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
         overflow: hidden;
         margin: 2rem auto;
         min-height: 90vh;
     }
+}
+
+.btn-primary {
+    @apply bg-pop-purple text-white py-3 px-6 rounded-lg font-medium hover:bg-pop-purple-dark transition-all duration-300 transform hover:scale-105;
+}
+
+.btn-secondary {
+    @apply bg-white text-pop-purple border border-pop-purple py-3 px-6 rounded-lg font-medium hover:bg-pop-purple-light transition-all duration-300;
+}
+
+.input-field {
+    @apply w-full px-4 py-3 border border-pop-gray-dark rounded-lg focus:ring-2 focus:ring-pop-purple focus:border-pop-purple transition-all duration-300;
+}
+
+.alert-success {
+    @apply bg-green-50 text-green-700 p-4 rounded-lg mb-4 border border-green-200;
+}
+
+.alert-error {
+    @apply bg-red-50 text-red-700 p-4 rounded-lg mb-4 border border-red-200;
 }
